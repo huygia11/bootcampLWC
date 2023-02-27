@@ -1,0 +1,32 @@
+.contact-table {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+/* .contact-table thead, tbody {
+    display: block;
+    width: 100%;
+}
+.contact-table tbody {
+    height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+} */
+
+th, tr, td {
+    background-color: #fff;
+    border: none;
+    border-bottom: 1px solid #cecece;
+    padding: 8px;
+}
+
+.des {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.des h1 {
+    font-size: 1rem;
+}

@@ -1,0 +1,37 @@
+<template>
+    <div class="des">
+        <h1>Or you can select from existing contacts of this account</h1>
+        <h1>Table Component</h1>
+    </div>
+
+    <table class="contact-table">
+        <thead>
+            <template for:each={columns} for:item="column">
+                <th key={column.fieldName}>
+                    {column.label}
+                </th>
+            </template>
+        </thead>
+
+        <tbody>
+            <template for:each={relatedContacts} for:item="contact">
+                <tr key={contact.Id}>
+                    <td>
+                        <lightning-button-icon-stateful
+                            onclick={handleSelectContact}
+                            class="slds-m-left_xx-small"
+                            icon-name="utility:adduser"
+                            data-id={contact.Id}
+                        ></lightning-button-icon-stateful>
+                    </td>
+                    <td>{contact.Salutation}</td>
+                    <td>{contact.FirstName}</td>
+                    <td>{contact.LastName}</td>
+                    <td><lightning-formatted-email value={contact.Email}></lightning-formatted-email></td>
+                    <td><lightning-formatted-phone value={contact.Phone}></lightning-formatted-phone></td>
+                    <td>{contact.Title}</td>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+</template>

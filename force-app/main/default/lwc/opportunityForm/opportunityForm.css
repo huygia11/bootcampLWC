@@ -1,0 +1,16 @@
+.opp-form {
+    display: flex;
+    flex: 1 1;
+    flex-wrap: wrap;
+}
+
+.opp-form > div {
+    width: 50%;
+}
+
+.action-btn {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

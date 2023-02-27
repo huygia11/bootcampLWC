@@ -1,0 +1,76 @@
+<template>
+    <form class="contact-form" action="">
+        <div class="combobox slds-p-around_medium lgc-bg">
+            <lightning-combobox
+                options={salutations}
+                name="Salutation"
+                label="Salutation"
+                class="validate"
+                value={defaultContact.Salutation}
+                onchange={handleInputChange}
+                disabled={disabledContactForm}
+            ></lightning-combobox>
+        </div>
+
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input name="Email" required type="Email" label="Email" class="validate"
+                value={defaultContact.Email} onchange={handleInputChange}
+                disabled={disabledContactForm}></lightning-input>
+        </div>
+
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input name="FirstName" type="text" label="First Name" class="validate"
+                value={defaultContact.FirstName} onchange={handleInputChange}
+                disabled={disabledContactForm}></lightning-input>
+        </div>
+
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input name="Phone" required type="tel" label="Phone" pattern="(84|0[3|5|7|8|9])+([0-9]{8})\b"
+                class="validate" value={defaultContact.Phone} onchange={handleInputChange}
+                disabled={disabledContactForm}></lightning-input>
+        </div>
+
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input name="LastName" required type="text" label="Last Name" class="validate"
+                value={defaultContact.LastName} onchange={handleInputChange}
+                disabled={disabledContactForm}></lightning-input>
+        </div>
+    </form>
+
+    <!-- table component -->
+    <c-contact-table related-contacts={relatedContacts} default-contact={defaultContact}></c-contact-table>
+
+    <!-- <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <div class="des">
+        <h1>Table in Contact Form</h1>
+    </div>
+
+    <table class="contact-table">
+        <thead>
+            <template for:each={columns} for:item="column">
+                <th key={column.fieldName}>
+                    {column.label}
+                </th>
+            </template>
+        </thead>
+
+        <tbody>
+            <template for:each={contacts} for:item="contact">
+                <tr key={contact.Id}>
+                    <td><lightning-button-icon-stateful
+                        icon-name="utility:adduser"
+                        onclick={handleAddButtonClick}
+                        alternative-text="Add"
+                        class="slds-m-left_xx-small"
+                    ></lightning-button-icon-stateful></td>
+                    <td>{contact.salutation}</td>
+                    <td>{contact.firstName}</td>
+                    <td>{contact.lastName}</td>
+                    <td><lightning-formatted-email value={contact.email}></lightning-formatted-email></td>
+                    <td><lightning-formatted-phone value={contact.phone}></lightning-formatted-phone></td>
+                    <td>{contact.title}</td>
+                </tr>
+            </template>
+        </tbody>
+    </table> -->
+</template>

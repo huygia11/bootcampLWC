@@ -1,0 +1,40 @@
+<template>
+    <div class="opp-form">
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input
+                name="Name"
+                required
+                type="text"
+                label="Application Name"
+                class="validate"
+                value={defaultOpportunity.Name}
+                onchange={handleChangeInput}
+            ></lightning-input>
+        </div>
+
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-combobox
+                name="StageName"
+                required
+                label="Stage"
+                options={stages.data.values}
+                class="validate"
+                value={defaultOpportunity.StageName}
+                onchange={handleChangeInput}
+            ></lightning-combobox>
+        </div>
+
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input
+                name="CloseDate"
+                required
+                type="date"
+                date-style="short"
+                label="Enter a date"
+                class="validate"
+                value={defaultOpportunity.CloseDate}
+                onchange={handleChangeInput}
+            ></lightning-input>
+        </div>
+    </div>
+</template>

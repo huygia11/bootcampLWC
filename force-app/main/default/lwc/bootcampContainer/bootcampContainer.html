@@ -1,0 +1,41 @@
+<template>
+    <div class="container">
+        <div class="account-title">
+            <h1>{accountName}</h1>
+        </div>
+        
+        <!-- Contact form component -->
+        <c-contact-form if:true={isContactPage}
+            default-contact={contact}
+            related-contacts={relatedContacts}
+            onstored={handleStoredContact}
+            onselected={handleSelectedContact}
+            onunselected={handleUnselectedContact}
+            disabled-contact-form={disabledContactForm}
+        ></c-contact-form>
+
+        <!-- Opportunity form component -->
+        <c-opportunity-form if:false={isContactPage}
+            default-opportunity={opportunity}
+            onstored={handleStoredOpp}
+        ></c-opportunity-form>
+
+        <!-- Spinner -->
+        <div class="slds-m-around_large">
+            <div if:true={isSpinner} class="slds-is-relative">
+                <lightning-spinner size="large" class="spinner"></lightning-spinner>
+            </div>
+        </div>
+
+        <hr />
+
+        <!-- action buttons -->
+        <div class="action-btn">
+            <lightning-button label={btnLabel} disabled={disableNextBtn} onclick={handleOnSwitchPage}
+                class="slds-m-left_x-small"></lightning-button>
+
+            <lightning-button label="Submit" title="Submit" onclick={handleOnSubmit} variant="brand"
+                class="slds-m-left_x-small" disabled={isContactPage}></lightning-button>
+        </div>
+    </div>
+</template>
