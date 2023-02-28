@@ -11,15 +11,11 @@
 .container .account-title h1 {
     font-weight: bold;
     font-size: 2rem;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
     color: #ffffff;
     text-align: center;
     letter-spacing: 5px;
-    text-shadow: -2px 2px 0 #8d8d8d,
-        2px 2px 0 #8d8d8d,
-        2px -2px 0 #8d8d8d,
-        -2px -2px 0 #8d8d8d;
+    text-shadow: 2px 2px 0 #777777;
 }
 
 .container .action-btn {
