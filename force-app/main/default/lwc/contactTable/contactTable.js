@@ -2,13 +2,13 @@ import { LightningElement, track, wire, api } from 'lwc';
 
 export default class contactTable extends LightningElement {
     columns = [
-        { label: '', fieldName: '', type: '', },
-        { label: 'Salutation', fieldName: 'salutation', type: 'text', },
-        { label: 'First Name', fieldName: 'firstName', type: 'text', },
-        { label: 'Last Name', fieldName: 'lastName', type: 'text' },
-        { label: 'Email', fieldName: 'email', type: 'email' },
-        { label: 'Phone Number', fieldName: 'phoneNumber', type: 'phone' },
-        { label: 'Title', fieldName: 'title', type: 'text' },
+        { label: '' },
+        { label: 'Salutation' },
+        { label: 'First Name' },
+        { label: 'Last Name' },
+        { label: 'Email' },
+        { label: 'Phone Number' },
+        { label: 'Title' },
     ];
 
     @api relatedContacts = [];
@@ -18,14 +18,13 @@ export default class contactTable extends LightningElement {
     renderedCallback() {
         let buttons = this.template.querySelectorAll("lightning-button-icon-stateful");
 
-        for (let btn of buttons) {
+        buttons.forEach(btn => {
             btn.selected = btn.dataset.id == this.defaultContact.Id;
-        }
+        })
     }
 
     handleSelectContact(e) {
         let selectedId = e.currentTarget.dataset.id;
-
         // handle UI render
         let buttons = this.template.querySelectorAll("lightning-button-icon-stateful");
         buttons.forEach(btn => {
@@ -43,9 +42,8 @@ export default class contactTable extends LightningElement {
                 ))
         }
         else {
-            // selected and fire event to parent on contact selected
             let selectedContact_ = this.relatedContacts.filter(c => c.Id == selectedId);
-
+            // selected and fire event to parent on contact selected
             if (selectedContact_.length == 1) {
                 this.dispatchEvent(
                     new CustomEvent(
