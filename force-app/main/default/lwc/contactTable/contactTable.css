@@ -1,18 +1,18 @@
 .contact-table {
-    width: 95%;
+    /* width: 95%; */
     margin: 0 auto;
     margin-top: 2rem;
 }
 
-/* .contact-table thead, tbody {
-    display: block;
-    width: 100%;
+thead, tbody {
+    display: inline-block;
 }
-.contact-table tbody {
+
+tbody {
     height: 200px;
     overflow-y: auto;
     overflow-x: hidden;
-} */
+}
 
 th, tr, td {
     background-color: #fff;
